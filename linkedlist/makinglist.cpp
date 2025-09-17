@@ -45,14 +45,7 @@ public:
         }
     }
 
-    void popback(){
-        if(head==NULL){
-            cout<<"the list is empty";
-        }
-        else{
-            tail=NULL;
-        }
-    }
+    
 
     void showlist(){
         Node *temp = head;
@@ -65,6 +58,44 @@ public:
         cout<<endl;
     }
 
+    void popback(){
+        if(head==NULL){
+            cout<<"the list is empty";
+        }
+
+        if (head == tail) {
+            delete head;
+            head = tail = NULL;
+            return;
+        }   
+        else{
+
+            Node* temp=head;
+            while (temp->next!=tail)
+            {
+                temp=temp->next;
+            }
+            
+            temp->next=NULL;
+            delete tail;
+
+            tail=temp;
+           
+
+            
+        }
+    }
+
+
+    void popfront(){
+        if (head==NULL){
+            cout<<"list is empty";
+        }
+        Node* temp=head;
+        head=head->next;
+        delete temp;
+        
+    }
 
 };
 int main(){
@@ -80,5 +111,7 @@ int main(){
     l1.showlist();
     l1.popback();
     l1.showlist();
+    l1.popfront();
+    l1.showlist();;
     return 0;
 }
