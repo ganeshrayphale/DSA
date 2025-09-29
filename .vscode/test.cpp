@@ -1,11 +1,27 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
 using namespace std;
-int main(){
-vector <int> vec={4,5};
-cout<<vec[0]<<endl;
-cout<<vec[1]<<endl;
-cout<<vec[2];
-cout<<&(*vec.begin());
 
+
+class Animal {
+public:
+    void eat() {
+        cout << "This animal can eat." << endl;
+    }
+};
+
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "The dog barks." << endl;
+    }
+};
+
+int main() {
+    Dog myDog;
+
+    myDog.eat();   
+    myDog.bark();  
+
+    return 0;
 }

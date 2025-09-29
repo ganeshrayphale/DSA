@@ -7,15 +7,23 @@ int main(){
     for(int i=0;i<count;i++){
         cout<<arr[i]<<" ";
     }
-    for (int i = 0; i < count; i++)//[4 5 6 7]
+    for (int i = 1; i < count; i++)//[4 5 6 7]
     {
-        int current = arr[i];
+        int current = i;
+        int previous = i-1;
+        
 
         int j=1;
-        while(j!=count-1){
+
+        while(previous>=0 && arr[previous]>arr[current]){
+            arr[previous+1]=arr[previous];
+            previous--;
             
         }
 
+        arr[previous+1]=arr[current];
+        
+        
         
         
     }
