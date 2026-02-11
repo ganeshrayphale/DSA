@@ -13,7 +13,7 @@ int main(){
         int previous = i-1;
         
 
-        int j=1;
+        
 
         while(previous>=0 && arr[previous]>arr[current]){
             arr[previous+1]=arr[previous];
@@ -22,10 +22,7 @@ int main(){
         }
 
         arr[previous+1]=arr[current];
-        
-        
-        
-        
+    
     }
     cout<<endl<<"after sort"<<endl;
     for(int i=0;i<count;i++){
